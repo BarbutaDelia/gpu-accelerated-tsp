@@ -46,6 +46,9 @@ def roulette_wheel_selection(population, fitness_scores):
     return population[random.choices(range(len(population)), probabilities)[0]]
 
 
+# How this crossover works is that two random indices are chosen. Everything between the 2 indices are copied
+# from the parent 1 into child. Now every index from the child which isn't between the chosen indexes is populated
+# with remaining genes from the other parent.
 def order_crossover(parent1, parent2):
     size = len(parent1)
     child = [-1] * size
